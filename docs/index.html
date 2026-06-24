@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ผลงาน Lab 1-6 | นายพีรพล พรหมศร</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: "Sarabun", "Noto Sans Thai", Arial, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: radial-gradient(circle at top, rgba(56, 189, 248, 0.18), transparent 28%),
+                  radial-gradient(circle at bottom right, rgba(16, 185, 129, 0.15), transparent 20%),
+                  #0f172a;
+    }
+    .page {
+      width: min(1080px, 100%);
+      padding: 32px;
+      border-radius: 24px;
+      background: rgba(15, 23, 42, 0.95);
+      box-shadow: 0 24px 90px rgba(15, 23, 42, 0.45);
+      border: 1px solid rgba(148, 163, 184, 0.12);
+    }
+    header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      letter-spacing: -0.04em;
+      color: #7dd3fc;
+    }
+    .student-info {
+      margin: 12px auto 0;
+      max-width: 42rem;
+      color: #cbd5e1;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+    .lab-grid {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+    .lab-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 150px;
+      padding: 22px;
+      border-radius: 22px;
+      text-decoration: none;
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      background: rgba(30, 41, 59, 0.75);
+      color: inherit;
+    }
+    .lab-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 40px rgba(56, 189, 248, 0.16);
+    }
+    .lab-card.lab-available {
+      border-color: #22c55e;
+      background: linear-gradient(180deg, rgba(34, 197, 94, 0.14), rgba(15, 23, 42, 0.8));
+    }
+    .lab-card.lab-missing {
+      cursor: default;
+      opacity: 0.65;
+      pointer-events: none;
+      border-color: #94a3b8;
+      background: rgba(15, 23, 42, 0.72);
+    }
+    .lab-number {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .lab-status {
+      font-size: 0.98rem;
+      color: #cbd5e1;
+      line-height: 1.6;
+    }
+    .lab-message {
+      margin-top: 32px;
+      padding: 18px 20px;
+      border-radius: 16px;
+      background: rgba(148, 163, 184, 0.08);
+      color: #cbd5e1;
+      border: 1px solid rgba(148, 163, 184, 0.16);
+      font-size: 0.98rem;
+    }
+    @media (max-width: 520px) {
+      .page {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <h1>ผลงาน Lab 1-6</h1>
+      <p class="student-info">นายพีรพล พรหมศร | รหัสนักศึกษา 683380308-7<br />เลือก Lab เพื่อเปิดผลงาน Godot ที่ส่งไว้ในโฟลเดอร์</p>
+    </header>
+
+    <section class="lab-grid" id="labs"></section>
+
+    <div class="lab-message">
+      หมายเหตุ: ปุ่มที่เปิดไม่ได้จะแสดงเป็นสีเทา เมื่อยังไม่มีไฟล์ `lab0X.html` ในโฟลเดอร์นั้น คุณสามารถเพิ่มโฟลเดอร์ `lab2` - `lab6` พร้อมไฟล์ `lab02.html` - `lab06.html` ได้ในภายหลัง
+    </div>
+  </main>
+
+  <script>
+    const totalLabs = 6;
+    const labsContainer = document.getElementById('labs');
+
+    for (let lab = 1; lab <= totalLabs; lab++) {
+      const labIndex = String(lab).padStart(2, '0');
+      const labPath = `lab${lab}/lab${labIndex}.html`;
+      const card = document.createElement('a');
+      card.className = 'lab-card lab-loading';
+      card.href = labPath;
+      card.innerHTML = `
+        <div class="lab-number">Lab ${lab}</div>
+        <div class="lab-status">กำลังตรวจสอบผลงาน...</div>
+      `;
+      labsContainer.appendChild(card);
+
+      fetch(labPath, { method: 'HEAD' })
+        .then(response => {
+          if (response.ok) {
+            card.classList.remove('lab-loading');
+            card.classList.add('lab-available');
+            card.innerHTML = `
+              <div class="lab-number">Lab ${lab}</div>
+              <div class="lab-status">คลิกเพื่อดูผลงาน</div>
+            `;
+          } else {
+            card.classList.remove('lab-loading');
+            card.classList.add('lab-missing');
+            card.innerHTML = `
+              <div class="lab-number">Lab ${lab}</div>
+              <div class="lab-status">ยังไม่มีผลงาน</div>
+            `;
+            card.href = '#';
+          }
+        })
+        .catch(() => {
+          card.classList.remove('lab-loading');
+          card.classList.add('lab-missing');
+          card.innerHTML = `
+            <div class="lab-number">Lab ${lab}</div>
+            <div class="lab-status">ยังไม่มีผลงาน</div>
+          `;
+          card.href = '#';
+        });
+    }
+  </script>
+</body>
+</html>
