@@ -1,0 +1,18 @@
+78098b89c88a74ebe8c20117b8754620
+::res://::1782872718
+Ball.tscn::PackedScene::8064037037699315273::1782871051::0::1::::<><><>0<>0<><>::uid://buxbhum25dq4f::::res://assets/Basketball.png
+export_presets.cfg::TextFile::-1::1782872718::0::1::::<><><>0<>0<><>::
+icon.svg::CompressedTexture2D::7951457360396824501::1744386698::1782870281::1::::<><><>0<>0<>89ab6497392c9f9c98d525f651af4900<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+Main.gd::GDScript::3253081640721857007::1782870674::0::1::::<>Node<><>0<>0<><>::
+Main.tscn::PackedScene::2580185021150866616::1782872524::0::1::::<><><>0<>0<><>::uid://bml21q6iedb32::::res://Main.gd<>uid://dm5jrnxmxnuof::::res://Ball.tscn<>uid://c2d4tqx4byjl1::::res://Wall.tscn
+README.md::TextFile::-1::1744386698::0::1::::<><><>0<>0<><>::
+Wall.tscn::PackedScene::6675928878973697892::1782872361::0::1::::<><><>0<>0<><>::uid://dkq1swbmmxmbq::::res://assets/Bouncy Platform Long.png
+::res://assets/::1782870998
+ballBlue_10.png::CompressedTexture2D::8698298520458212912::1744386698::1782870281::1::::<><><>0<>0<>0c763170a79ad99eedbeeb4d88792545<>res://.godot/imported/ballBlue_10.png-a6ac20f1eeff46860499a0f8c7bba4ff.ctex::
+Basketball.png::CompressedTexture2D::3837752532618864119::1782870997::1782870998::1::::<><><>0<>0<>5e9c84ef5c8eacbf54456d97d928def9<>res://.godot/imported/Basketball.png-76809f48f98c34bfdd4e539631197321.ctex::
+Bouncy Platform Long.png::CompressedTexture2D::7895792475247486234::1744386698::1782870281::1::::<><><>0<>0<>31118e1e1499f35295f49355ab77bcfe<>res://.godot/imported/Bouncy Platform Long.png-9b2628c180785c5ec622adb5c4ee7b17.ctex::
+Bouncy Platform Medium.png::CompressedTexture2D::3192301516354317244::1744386698::1782870281::1::::<><><>0<>0<>f1225ecbb5f27ac74a634ecf21c01a09<>res://.godot/imported/Bouncy Platform Medium.png-7896338a5f44da1e83084c154a3c4a9e.ctex::
+::res://docs/::1782872717
+lab2_1.apple-touch-icon.png::CompressedTexture2D::4575397326177491505::1782872717::1782872841::1::::<><><>0<>0<>0da1f501f77d61ca3c839d4509f41186<>res://.godot/imported/lab2_1.apple-touch-icon.png-9c9dbc617f29ec6028ca6929c611490f.ctex::
+lab2_1.icon.png::CompressedTexture2D::1606957094832001117::1782872717::1782872841::1::::<><><>0<>0<>43e2c7cbc5e0b6fde73295fb69ea5bad<>res://.godot/imported/lab2_1.icon.png-7309fc2054bf4010bdd42aba19b26c94.ctex::
+lab2_1.png::CompressedTexture2D::3315385461303775127::1782872717::1782872841::1::::<><><>0<>0<>1f192c2023b258508829426384e055c2<>res://.godot/imported/lab2_1.png-fcd1a9181ebf1a425a0b79986d4c6a0f.ctex::

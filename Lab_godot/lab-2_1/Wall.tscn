@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c2d4tqx4byjl1"]
+
+[ext_resource type="Texture2D" uid="uid://dkq1swbmmxmbq" path="res://assets/Bouncy Platform Long.png" id="1_l7iai"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l6igm"]
+radius = 28.5
+height = 314.0
+
+[node name="Wall" type="StaticBody2D" unique_id=663107098]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2032722763]
+texture = ExtResource("1_l7iai")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1611664310]
+position = Vector2(0, -0.5)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_l6igm")

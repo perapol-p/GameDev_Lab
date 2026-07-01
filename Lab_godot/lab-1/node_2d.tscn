@@ -1,0 +1,196 @@
+[gd_scene format=3 uid="uid://b8oro3p8igi7v"]
+
+[ext_resource type="Script" uid="uid://dgo78eqjrsk1" path="res://main.gd" id="1_0hol4"]
+[ext_resource type="Texture2D" uid="uid://dgyo627hoyfio" path="res://BG.png" id="1_epypp"]
+[ext_resource type="Texture2D" uid="uid://5gw5ol8a0p04" path="res://Cartoon.png" id="2_0hol4"]
+[ext_resource type="Texture2D" uid="uid://bnie888nugg1" path="res://Real.png" id="3_q6r6c"]
+
+[sub_resource type="Animation" id="Animation_kdubu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Real:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(830, 122.00003)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Real:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Real:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.04490505, 0.044905055)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Cartoon:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(193, 443.99997)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Cartoon:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Cartoon:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.37797618, 0.39097744)]
+}
+
+[sub_resource type="Animation" id="Animation_d21ai"]
+resource_name = "animation"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Real:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(830, 122.00003), Vector2(830, 122.00003)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Real:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2.0333333, 3, 3.99, 5.02, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.6666241, 4.795, 6.9892774, 5.003912, 7.007391, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Real:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.04490505, 0.044905055), Vector2(0.04490505, 0.044905055)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Cartoon:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1, 1.47, 1.9666667, 2.22, 2.23, 2.59, 3.01, 3.25, 3.5, 4.01, 4.27, 5.2, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(193, 443.99997), Vector2(545, 351.00003), Vector2(601, 251), Vector2(789, 368), Vector2(789, 368), Vector2(789, 368), Vector2(581.1103, 284.17615), Vector2(476, 338), Vector2(476, 338), Vector2(525, 224), Vector2(571, 284), Vector2(571, 284), Vector2(833.2356, 357.38577), Vector2(1047, 309)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Cartoon:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.99, 1.47, 1.9666667, 2.23, 2.59, 3.01, 3.25, 3.5, 4.01, 4.27, 5.2, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 3.1415927, 6.2831855, 6.2831855, 3.1415927, 0.0, 0.0, 3.1415927, 6.2831855, 6.2831855, 6.2831855, 6.2831855]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Cartoon:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.99, 1.47, 1.9666667, 2.23, 2.59, 3.01, 3.25, 3.5, 4.01, 4.27, 5.2, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.37797618, 0.39097744), Vector2(0.3229167, 0.33402407), Vector2(0.24875988, 0.2573165), Vector2(0.16306365, 0.16867256), Vector2(0.16306365, 0.16867256), Vector2(0.11367933, 0.11758956), Vector2(0.11367932, 0.11758956), Vector2(0.11367932, 0.11758956), Vector2(0.09453805, 0.09778988), Vector2(0.06164455, 0.06376496), Vector2(0.06164455, 0.06376496), Vector2(0.04822317, 0.049881916), Vector2(0.048223168, 0.049881905)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rj586"]
+_data = {
+&"RESET": SubResource("Animation_kdubu"),
+&"animation": SubResource("Animation_d21ai")
+}
+
+[node name="Node2D" type="Node2D" unique_id=735931187]
+script = ExtResource("1_0hol4")
+
+[node name="Bg" type="Sprite2D" parent="." unique_id=1619161072]
+position = Vector2(579, 330)
+scale = Vector2(0.8502604, 0.85026044)
+texture = ExtResource("1_epypp")
+
+[node name="Cartoon" type="Sprite2D" parent="." unique_id=1809245927]
+position = Vector2(193, 443.99997)
+scale = Vector2(0.37797618, 0.39097744)
+texture = ExtResource("2_0hol4")
+
+[node name="Real" type="Sprite2D" parent="." unique_id=1780193742]
+position = Vector2(830, 122.00003)
+scale = Vector2(0.04490505, 0.044905055)
+texture = ExtResource("3_q6r6c")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=903084523]
+libraries/ = SubResource("AnimationLibrary_rj586")
+
+[node name="Label" type="Label" parent="." unique_id=188697696]
+modulate = Color(1, 0, 0, 1)
+offset_left = 362.0
+offset_top = 31.0
+offset_right = 787.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 50
+text = "683380308-7 Sec1
+พีรพล พรหมศร"
+horizontal_alignment = 1
+vertical_alignment = 1

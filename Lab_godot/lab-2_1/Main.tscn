@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://bc04jgq832nvc"]
+
+[ext_resource type="Script" uid="uid://bml21q6iedb32" path="res://Main.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://dm5jrnxmxnuof" path="res://Ball.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://c2d4tqx4byjl1" path="res://Wall.tscn" id="4_cm0pq"]
+
+[node name="Main" type="Node" unique_id=813105799]
+script = ExtResource("1")
+Ball = ExtResource("2")
+
+[node name="WallContainer" type="Node" parent="." unique_id=395599928]
+
+[node name="Ball" parent="." unique_id=404119435 instance=ExtResource("2")]
+position = Vector2(388, 85)
+gravity_scale = 0.772
+
+[node name="Ball2" parent="." unique_id=1235386308 instance=ExtResource("2")]
+position = Vector2(943, 253)
+gravity_scale = 4.842
+
+[node name="Ball3" parent="." unique_id=1708217418 instance=ExtResource("2")]
+position = Vector2(835, 109)
+gravity_scale = 0.07
+
+[node name="Ball5" parent="." unique_id=1624648651 instance=ExtResource("2")]
+position = Vector2(631, 115)
+gravity_scale = 2.737
+
+[node name="Ball4" parent="." unique_id=2126422304 instance=ExtResource("2")]
+position = Vector2(166, 169)
+gravity_scale = 7.018
+
+[node name="Wall" parent="." unique_id=663107098 instance=ExtResource("4_cm0pq")]
+position = Vector2(123.999985, 486)
+rotation = 0.6981317
+
+[node name="Wall2" parent="." unique_id=327393816 instance=ExtResource("4_cm0pq")]
+position = Vector2(416, 580)
+
+[node name="Wall3" parent="." unique_id=876363727 instance=ExtResource("4_cm0pq")]
+position = Vector2(736, 579)
+
+[node name="Wall4" parent="." unique_id=752223090 instance=ExtResource("4_cm0pq")]
+position = Vector2(1025.9999, 473)
+rotation = -0.6981317
