@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://ckgf00ottf6di"]
+
+[ext_resource type="Texture2D" uid="uid://dtk0qpjv73lae" path="res://Assets/colored_plane_flying/000.png" id="1_bj0im"]
+[ext_resource type="Script" uid="uid://dchjf8yu8gjb1" path="res://enemy_plane.gd" id="1_wshm1"]
+[ext_resource type="Texture2D" uid="uid://bc20xfvelef23" path="res://Assets/colored_plane_flying/001.png" id="2_wshm1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xrivr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_bj0im")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_wshm1")
+}],
+"loop": 1,
+"name": &"flying",
+"speed": 15.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_13qdw"]
+size = Vector2(42, 13)
+
+[node name="EnemyPlane" type="RigidBody2D" unique_id=786024819]
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_wshm1")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1302425924]
+scale = Vector2(1.25, 1.25)
+sprite_frames = SubResource("SpriteFrames_xrivr")
+animation = &"flying"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1583248563]
+position = Vector2(0, -8.5)
+shape = SubResource("RectangleShape2D_13qdw")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." unique_id=924375676]
+
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]
