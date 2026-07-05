@@ -144,35 +144,22 @@
     <section class="lab-grid" id="labs"></section>
 
     <div class="lab-message">
-      หมายเหตุ: ปุ่มที่เปิดไม่ได้จะแสดงเป็นสีเทา เมื่อยังไม่มีไฟล์ `lab0X.html` ในโฟลเดอร์นั้น คุณสามารถเพิ่มโฟลเดอร์ `lab2` - `lab6` พร้อมไฟล์ `lab02.html` - `lab06.html` ได้ในภายหลัง
+      หมายเหตุ: lab ทั้งหมดถูกจัดทำขึ้นเพื่อการศึกษาและการเรียนรู้เท่านั้น ผลงานนี้เป็นของนักศึกษาและไม่ได้มีเจตนาละเมิดลิขสิทธิ์หรือทรัพย์สินทางปัญญาของผู้อื่น หากมีข้อสงสัยหรือข้อเสนอแนะเกี่ยวกับผลงาน กรุณาติดต่อผู้จัดทำโดยตรง
     </div>
   </main>
 
   <script>
     const totalLabs = 6;
     const labsContainer = document.getElementById('labs');
+    const explicitLabPaths = {
+      2: 'lab2/lab2_1/lab2_1.html'
+    };
 
     for (let lab = 1; lab <= totalLabs; lab++) {
       const labIndex = String(lab).padStart(2, '0');
-      const labPath = `lab${lab}/lab${labIndex}.html`;
-      const card = document.createElement(lab === 2 ? 'div' : 'a');
+      const labPath = explicitLabPaths[lab] || `lab${lab}/lab${labIndex}.html`;
+      const card = document.createElement('a');
       card.className = 'lab-card lab-loading';
-
-      if (lab === 2) {
-        card.classList.remove('lab-loading');
-        card.classList.add('lab-available');
-        card.innerHTML = `
-          <div class="lab-number">Lab ${lab}</div>
-          <div class="lab-status">เลือกหัวข้อย่อยของ Lab 2</div>
-          <div class="lab-subactions">
-            <a class="lab-subbutton" href="lab2/lab2_1/lab2_1.html">Lab 2.1</a>
-            <a class="lab-subbutton" href="lab2/lab2_2/lab2_2.html">Lab 2.2</a>
-          </div>
-        `;
-        labsContainer.appendChild(card);
-        continue;
-      }
-
       card.href = labPath;
       card.innerHTML = `
         <div class="lab-number">Lab ${lab}</div>
