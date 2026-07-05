@@ -156,6 +156,21 @@
     };
 
     for (let lab = 1; lab <= totalLabs; lab++) {
+      if (lab === 2) {
+        const card = document.createElement('div');
+        card.className = 'lab-card lab-available';
+        card.innerHTML = `
+          <div class="lab-number">Lab 2</div>
+          <div class="lab-status">เลือกหัวข้อย่อยของ Lab 2</div>
+          <div class="lab-subactions">
+            <a class="lab-subbutton" href="lab2/lab2_1/lab2_1.html">Lab 2.1</a>
+            <a class="lab-subbutton" href="lab2/lab2_2/lab2_2.html">Lab 2.2</a>
+          </div>
+        `;
+        labsContainer.appendChild(card);
+        continue;
+      }
+
       const labIndex = String(lab).padStart(2, '0');
       const labPath = explicitLabPaths[lab] || `lab${lab}/lab${labIndex}.html`;
       const card = document.createElement('a');
