@@ -21,7 +21,8 @@ config/icon="res://icon.svg"
 
 [editor]
 
-movie_writer/movie_file="D:/683380308-7/Lab/Video/Lab2_1.ogv"
+movie_writer/movie_file="C:/Users/User/Documents/Project/GameDev_Lab/Video/Lab2_1.ogv"
+movie_writer/disable_vsync=true
 
 [importer_defaults]
 

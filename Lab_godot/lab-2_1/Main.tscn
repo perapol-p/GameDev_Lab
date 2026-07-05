@@ -2,11 +2,17 @@
 
 [ext_resource type="Script" uid="uid://bml21q6iedb32" path="res://Main.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://dm5jrnxmxnuof" path="res://Ball.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://borjwt6801f1" path="res://images (1).jpg" id="3_cm0pq"]
 [ext_resource type="PackedScene" uid="uid://c2d4tqx4byjl1" path="res://Wall.tscn" id="4_cm0pq"]
 
 [node name="Main" type="Node" unique_id=813105799]
 script = ExtResource("1")
 Ball = ExtResource("2")
+
+[node name="bg" type="Sprite2D" parent="." unique_id=389509971]
+position = Vector2(574, 323)
+scale = Vector2(2.1027398, 2.1027398)
+texture = ExtResource("3_cm0pq")
 
 [node name="WallContainer" type="Node" parent="." unique_id=395599928]
 
@@ -43,3 +49,19 @@ position = Vector2(736, 579)
 [node name="Wall4" parent="." unique_id=752223090 instance=ExtResource("4_cm0pq")]
 position = Vector2(1025.9999, 473)
 rotation = -0.6981317
+
+[node name="Wall5" parent="." unique_id=955299307 instance=ExtResource("4_cm0pq")]
+position = Vector2(1180, 211)
+rotation = -1.5707964
+
+[node name="Wall8" parent="." unique_id=1420258734 instance=ExtResource("4_cm0pq")]
+position = Vector2(1179, -101)
+rotation = -1.5707964
+
+[node name="Wall6" parent="." unique_id=594409802 instance=ExtResource("4_cm0pq")]
+position = Vector2(-7, 204)
+rotation = -1.5707964
+
+[node name="Wall7" parent="." unique_id=1141546892 instance=ExtResource("4_cm0pq")]
+position = Vector2(-7, -109)
+rotation = -1.5707964

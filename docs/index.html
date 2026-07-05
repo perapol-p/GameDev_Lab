@@ -94,6 +94,30 @@
       color: #cbd5e1;
       line-height: 1.6;
     }
+    .lab-subactions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .lab-subbutton {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(125, 211, 252, 0.16);
+      color: #e0f2fe;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: 1px solid rgba(125, 211, 252, 0.28);
+      transition: background 180ms ease, transform 180ms ease;
+    }
+    .lab-subbutton:hover {
+      background: rgba(125, 211, 252, 0.24);
+      transform: translateY(-1px);
+    }
     .lab-message {
       margin-top: 32px;
       padding: 18px 20px;
@@ -131,8 +155,24 @@
     for (let lab = 1; lab <= totalLabs; lab++) {
       const labIndex = String(lab).padStart(2, '0');
       const labPath = `lab${lab}/lab${labIndex}.html`;
-      const card = document.createElement('a');
+      const card = document.createElement(lab === 2 ? 'div' : 'a');
       card.className = 'lab-card lab-loading';
+
+      if (lab === 2) {
+        card.classList.remove('lab-loading');
+        card.classList.add('lab-available');
+        card.innerHTML = `
+          <div class="lab-number">Lab ${lab}</div>
+          <div class="lab-status">เลือกหัวข้อย่อยของ Lab 2</div>
+          <div class="lab-subactions">
+            <a class="lab-subbutton" href="lab2/lab2_1/lab2_1.html">Lab 2.1</a>
+            <a class="lab-subbutton" href="lab2/lab2_2/lab2_2.html">Lab 2.2</a>
+          </div>
+        `;
+        labsContainer.appendChild(card);
+        continue;
+      }
+
       card.href = labPath;
       card.innerHTML = `
         <div class="lab-number">Lab ${lab}</div>
