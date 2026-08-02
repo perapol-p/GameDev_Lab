@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stone & Flesh</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: "Sarabun", "Noto Sans Thai", Arial, sans-serif;
+      background: #07111f;
+      color: #f8fafc;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #07111f 0%, #13243d 45%, #1d3557 100%);
+      color: #f8fafc;
+      padding: 24px;
+    }
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px;
+      border-radius: 24px;
+      background: rgba(2, 8, 23, 0.78);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 3.2vw, 2.8rem);
+      color: #fbbf24;
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: #f8fafc;
+      background: rgba(248, 113, 113, 0.16);
+      border: 1px solid rgba(248, 113, 113, 0.28);
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: transform 180ms ease, background 180ms ease;
+    }
+    .back-btn:hover {
+      transform: translateY(-2px);
+      background: rgba(248, 113, 113, 0.24);
+    }
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+    .game-title-block {
+      flex: 1 1 320px;
+    }
+    .game-title {
+      font-size: clamp(1.8rem, 2.6vw, 2.4rem);
+      margin: 0 0 12px;
+      color: #f8fafc;
+    }
+    .play-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: #0f172a;
+      background: linear-gradient(135deg, #fde68a, #f59e0b);
+      padding: 12px 20px;
+      border-radius: 999px;
+      font-weight: 800;
+      box-shadow: 0 10px 25px rgba(245, 158, 11, 0.22);
+    }
+    .play-btn:hover {
+      transform: translateY(-2px);
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 22px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      object-fit: cover;
+      height: 180px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+    }
+    .description {
+      margin-top: 20px;
+      display: grid;
+      gap: 18px;
+    }
+    .card {
+      padding: 18px 20px;
+      border-radius: 18px;
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(148, 163, 184, 0.16);
+      line-height: 1.8;
+    }
+    .card h2 {
+      margin: 0 0 10px;
+      color: #7dd3fc;
+      font-size: 1.1rem;
+    }
+    .card p {
+      margin: 0;
+      color: #e2e8f0;
+    }
+    @media (max-width: 640px) {
+      body { padding: 14px; }
+      .page { padding: 20px; }
+      .gallery img { height: 150px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="header-row">
+      <h1>Lab 4</h1>
+      <a class="back-btn" href="../index.html">← กลับไปหน้าหลัก</a>
+    </div>
+
+    <section class="hero">
+      <div class="game-title-block">
+        <h2 class="game-title">Stone & Flesh</h2>
+        <a class="play-btn" href="Stone&amp;Flesh.html">Play</a>
+      </div>
+    </section>
+
+    <section class="gallery">
+      <img src="demo picture/demo1.png" alt="Stone & Flesh screenshot 1" />
+      <img src="demo picture/demo2.png" alt="Stone & Flesh screenshot 2" />
+      <img src="demo picture/demo3.png" alt="Stone & Flesh screenshot 3" />
+      <img src="demo picture/demo4.png" alt="Stone & Flesh screenshot 4" />
+    </section>
+
+    <section class="description">
+      <article class="card">
+        <h2>Game Story</h2>
+        <p>For centuries, you have slept soundly as the ancient guardian of a hidden subterranean sanctuary. But your peaceful slumber is abruptly shattered when a disgusting plague breaks out in the world above, sending hordes of mindless, rotting undead tumbling down into your home.</p>
+        <p>Awakened from your stone sleep by the sudden intrusion, you find your once-pristine domain infested with brainless intruders, foul stench, and green slime. Driven by pure guardian instinct (and an absolute refusal to let zombies ruin your quiet dungeon), you must raise your massive stone fists and smash, crush, and clear out every last piece of decaying flesh to reclaim your home!</p>
+      </article>
+      <article class="card">
+        <h2>Game Style</h2>
+        <p>Stone & Flesh is a fast-paced 2D action platformer featuring vibrant pixel art with expressive cartoon animations, combining precise jumping across tricky dungeon hazards with heavy, satisfying melee combat to crush hordes of zombies.</p>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

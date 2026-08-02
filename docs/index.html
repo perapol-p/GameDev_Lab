@@ -152,7 +152,11 @@
     const totalLabs = 6;
     const labsContainer = document.getElementById('labs');
     const explicitLabPaths = {
-      2: 'lab2/lab2_1/lab2_1.html'
+      2: 'lab2/lab2_1/lab2_1.html',
+      4: 'lab4/lab04.html'
+    };
+    const explicitLabLinks = {
+      3: 'https://docs.google.com/presentation/d/1d8BAuJagj5PnSog6JISh7TaJm0djpErao0rtusWktU4/edit?usp=sharing'
     };
 
     for (let lab = 1; lab <= totalLabs; lab++) {
@@ -166,6 +170,22 @@
             <a class="lab-subbutton" href="lab2/lab2_1/lab2_1.html">Lab 2.1</a>
             <a class="lab-subbutton" href="lab2/lab2_2/lab2_2.html">Lab 2.2</a>
           </div>
+        `;
+        labsContainer.appendChild(card);
+        continue;
+      }
+
+      if (lab === 3 || lab === 4) {
+        const card = document.createElement('a');
+        card.className = 'lab-card lab-available';
+        card.href = lab === 3 ? explicitLabLinks[3] : explicitLabPaths[4];
+        if (lab === 3) {
+          card.target = '_blank';
+          card.rel = 'noopener noreferrer';
+        }
+        card.innerHTML = `
+          <div class="lab-number">Lab ${lab}</div>
+          <div class="lab-status">คลิกเพื่อดูผลงาน</div>
         `;
         labsContainer.appendChild(card);
         continue;
