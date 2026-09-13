@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://iuyagy160dnt"]
+
+[ext_resource type="PackedScene" uid="uid://cbt2l25urrkh1" path="res://Assets/Models/Ultimate Fantasy RTS-glb/Stone Wall.glb" id="1_ndruv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xrivr"]
+size = Vector3(1.5536499, 0.444458, 0.17681885)
+
+[node name="Stone Wall" type="Node3D" unique_id=1642729833]
+
+[node name="Model" parent="." unique_id=1906935879 instance=ExtResource("1_ndruv")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Model" unique_id=1748861038]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Model/StaticBody3D" unique_id=371543653]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0054626465, 0.21832275, -0.0027770996)
+shape = SubResource("BoxShape3D_xrivr")
