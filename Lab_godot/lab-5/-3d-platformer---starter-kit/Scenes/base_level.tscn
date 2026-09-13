@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://bvuubjqb30egg"]
+
+[ext_resource type="PackedScene" uid="uid://cf0w0skqs3k64" path="res://Scenes/player.tscn" id="1_sur3v"]
+[ext_resource type="Texture2D" uid="uid://b4qbvatwsexsu" path="res://Assets/Textures/DaySky.exr" id="2_4rblm"]
+[ext_resource type="Script" uid="uid://duibbvusaxir2" path="res://Scripts/GameManager.gd" id="3_ytws3"]
+[ext_resource type="Script" uid="uid://cl5pkvvg3xwyb" path="res://Scripts/DeadZone.gd" id="4_0k83q"]
+[ext_resource type="Script" uid="uid://pwcnppok2hf8" path="res://Scripts/GameUI.gd" id="5_ta4i7"]
+[ext_resource type="Texture2D" uid="uid://cnbbny7qjh2xn" path="res://Assets/Textures/coin.png" id="6_rqtgi"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_13qdw"]
+panorama = ExtResource("2_4rblm")
+
+[sub_resource type="Sky" id="Sky_sur3v"]
+sky_material = SubResource("PanoramaSkyMaterial_13qdw")
+
+[sub_resource type="Environment" id="Environment_g4ka7"]
+background_mode = 2
+sky = SubResource("Sky_sur3v")
+ambient_light_source = 2
+ambient_light_color = Color(0.662745, 0.694118, 0.772549, 1)
+ambient_light_energy = 1.15
+tonemap_mode = 2
+tonemap_exposure = 0.75
+ssr_enabled = true
+ssao_enabled = true
+ssao_radius = 0.45
+ssao_intensity = 1.0
+ssao_power = 15.0
+ssil_enabled = true
+sdfgi_use_occlusion = true
+glow_enabled = true
+glow_intensity = 2.0
+fog_light_color = Color(0.647059, 0.678431, 0.72549, 1)
+volumetric_fog_temporal_reprojection_enabled = false
+adjustment_enabled = true
+adjustment_brightness = 1.06
+adjustment_contrast = 0.95
+adjustment_saturation = 1.09
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_asf4q"]
+size = Vector3(128, 17, 112)
+
+[sub_resource type="SystemFont" id="SystemFont_1ixsq"]
+font_names = PackedStringArray("Star Choco")
+multichannel_signed_distance_field = true
+
+[sub_resource type="SystemFont" id="SystemFont_4rblm"]
+font_names = PackedStringArray("Star Choco")
+
+[sub_resource type="LabelSettings" id="LabelSettings_igq7x"]
+font = SubResource("SystemFont_4rblm")
+font_size = 50
+font_color = Color(0.996094, 0.691406, 0.261719, 1)
+
+[node name="Base_Level" type="Node3D" unique_id=1493832636]
+
+[node name="Player" parent="." unique_id=2063914499 instance=ExtResource("1_sur3v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+
+[node name="Platforms" type="Node3D" parent="." unique_id=153343924]
+
+[node name="Environment" type="Node3D" parent="." unique_id=558902818]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment" unique_id=552070380]
+environment = SubResource("Environment_g4ka7")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment" unique_id=1072157702]
+transform = Transform3D(-0.898603, 0.438763, 2.98254e-08, 0.146657, 0.300359, 0.942484, 0.413527, 0.846919, -0.334251, 9.04457, 6.63937, -28.4749)
+shadow_enabled = true
+
+[node name="Extras" type="Node3D" parent="." unique_id=1589509609]
+
+[node name="SpawnPosition" type="Marker3D" parent="Extras" unique_id=742843995]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+
+[node name="Coins" type="Node3D" parent="." unique_id=393395822]
+
+[node name="GameManager" type="Node3D" parent="." unique_id=2056813042]
+script = ExtResource("3_ytws3")
+
+[node name="DeadZone" type="Area3D" parent="." unique_id=544933263]
+script = ExtResource("4_0k83q")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DeadZone" unique_id=1985937394]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9, 0)
+shape = SubResource("BoxShape3D_asf4q")
+
+[node name="UserInterface" type="CanvasLayer" parent="." unique_id=1676906285]
+
+[node name="GameUI" type="Control" parent="UserInterface" unique_id=764324548]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_ta4i7")
+metadata/_edit_use_anchors_ = true
+
+[node name="CoinTexture" type="TextureRect" parent="UserInterface/GameUI" unique_id=1367558831]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 31.0
+offset_right = 122.0
+offset_bottom = 121.0
+texture = ExtResource("6_rqtgi")
+expand_mode = 1
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="CoinsLabel" type="Label" parent="UserInterface/GameUI" unique_id=1473194759]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 50.0
+offset_right = 193.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(0.996094, 0.710938, 0.261719, 1)
+theme_override_colors/font_outline_color = Color(0.644531, 0.410156, 0.1875, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_1ixsq")
+theme_override_font_sizes/font_size = 48
+text = "X 3"
+label_settings = SubResource("LabelSettings_igq7x")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="body_entered" from="DeadZone" to="DeadZone" method="_on_body_entered"]

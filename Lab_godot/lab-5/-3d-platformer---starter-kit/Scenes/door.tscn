@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cc8jhmyi1x2bp"]
+
+[ext_resource type="Script" uid="uid://8t8wtivn0kuw" path="res://door.gd" id="1_p0e35"]
+[ext_resource type="PackedScene" uid="uid://y081cnun7mde" path="res://Scenes/Platform/Arch Door.glb" id="2_fahql"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xrivr"]
+size = Vector3(2.433838, 3.2099, 0.44335938)
+
+[node name="Door" type="Area3D" unique_id=528414719]
+script = ExtResource("1_p0e35")
+
+[node name="Model" parent="." unique_id=926143815 instance=ExtResource("2_fahql")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=732184528]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0052490234, 1.598053, -0.0048828125)
+shape = SubResource("BoxShape3D_xrivr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

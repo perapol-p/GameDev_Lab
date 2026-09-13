@@ -1,0 +1,177 @@
+[gd_scene format=3 uid="uid://dsibsq0g7xgqv"]
+
+[ext_resource type="PackedScene" uid="uid://cf0w0skqs3k64" path="res://Scenes/player.tscn" id="1_chwpn"]
+[ext_resource type="Texture2D" uid="uid://b4qbvatwsexsu" path="res://Assets/Textures/DaySky.exr" id="2_af3po"]
+[ext_resource type="Script" uid="uid://duibbvusaxir2" path="res://Scripts/GameManager.gd" id="3_uy8f0"]
+[ext_resource type="Script" uid="uid://cl5pkvvg3xwyb" path="res://Scripts/DeadZone.gd" id="4_6r07y"]
+[ext_resource type="Script" uid="uid://pwcnppok2hf8" path="res://Scripts/GameUI.gd" id="5_6ioyp"]
+[ext_resource type="Texture2D" uid="uid://cnbbny7qjh2xn" path="res://Assets/Textures/coin.png" id="6_oovug"]
+[ext_resource type="PackedScene" uid="uid://ddoyjd14bn4xk" path="res://Scenes/Platform/wall_modular.tscn" id="7_8i23i"]
+[ext_resource type="PackedScene" uid="uid://p6qeb57isyra" path="res://Scenes/Platform/pedestal.tscn" id="8_8yhm2"]
+[ext_resource type="PackedScene" uid="uid://dt8p2twifephy" path="res://Scenes/Platform/table_big.tscn" id="9_pjppf"]
+[ext_resource type="PackedScene" uid="uid://cc8jhmyi1x2bp" path="res://Scenes/door.tscn" id="10_yltlr"]
+[ext_resource type="PackedScene" uid="uid://n2d3vcgpsp3o" path="res://Scenes/level_2.tscn" id="11_af3po"]
+[ext_resource type="PackedScene" uid="uid://bk5n0tn4k1l0c" path="res://Scenes/Coin.tscn" id="12_uy8f0"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_6ssoq"]
+panorama = ExtResource("2_af3po")
+
+[sub_resource type="Sky" id="Sky_xrivr"]
+sky_material = SubResource("PanoramaSkyMaterial_6ssoq")
+
+[sub_resource type="Environment" id="Environment_imks0"]
+background_mode = 2
+sky = SubResource("Sky_xrivr")
+ambient_light_source = 2
+ambient_light_color = Color(0.662745, 0.694118, 0.772549, 1)
+ambient_light_energy = 1.15
+tonemap_mode = 2
+tonemap_exposure = 0.75
+ssr_enabled = true
+ssao_enabled = true
+ssao_radius = 0.45
+ssao_intensity = 1.0
+ssao_power = 15.0
+ssil_enabled = true
+sdfgi_use_occlusion = true
+glow_enabled = true
+glow_intensity = 2.0
+fog_light_color = Color(0.647059, 0.678431, 0.72549, 1)
+volumetric_fog_temporal_reprojection_enabled = false
+adjustment_enabled = true
+adjustment_brightness = 1.06
+adjustment_contrast = 0.95
+adjustment_saturation = 1.09
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dlmop"]
+size = Vector3(128, 17, 112)
+
+[sub_resource type="SystemFont" id="SystemFont_sda17"]
+font_names = PackedStringArray("Star Choco")
+multichannel_signed_distance_field = true
+
+[sub_resource type="SystemFont" id="SystemFont_656xb"]
+font_names = PackedStringArray("Star Choco")
+
+[sub_resource type="LabelSettings" id="LabelSettings_1fal7"]
+font = SubResource("SystemFont_656xb")
+font_size = 50
+font_color = Color(0.996094, 0.691406, 0.261719, 1)
+
+[node name="Level1" type="Node3D" unique_id=1000599359]
+
+[node name="Player" parent="." unique_id=950333792 instance=ExtResource("1_chwpn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+
+[node name="Platforms" type="Node3D" parent="." unique_id=1187460310]
+
+[node name="Wall_Modular" parent="Platforms" unique_id=1771510210 instance=ExtResource("7_8i23i")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0.2518468, 4.0167828, -0.035310745)
+skeleton = NodePath("../..")
+
+[node name="Wall_Modular2" parent="Platforms" unique_id=2104889385 instance=ExtResource("7_8i23i")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0.2518468, 4.0167828, -51.537704)
+skeleton = NodePath("../..")
+
+[node name="Pedestal" parent="Platforms" unique_id=1572709071 instance=ExtResource("8_8yhm2")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.61595154, 5.038364, -7.110004)
+skeleton = NodePath("../..")
+
+[node name="Pedestal2" parent="Platforms" unique_id=1100732244 instance=ExtResource("8_8yhm2")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.61595154, 5.038364, -14.732014)
+skeleton = NodePath("../..")
+
+[node name="Pedestal3" parent="Platforms" unique_id=1124454755 instance=ExtResource("8_8yhm2")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.61595154, 5.038364, -22.07323)
+skeleton = NodePath("../..")
+
+[node name="Pedestal4" parent="Platforms" unique_id=2119052982 instance=ExtResource("8_8yhm2")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.61595154, 5.038364, -29.9273)
+skeleton = NodePath("../..")
+
+[node name="Table_Big" parent="Platforms" unique_id=296384654 instance=ExtResource("9_pjppf")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.008924723, 4.1577992, -35.465492)
+skeleton = NodePath("../..")
+
+[node name="Table_Big2" parent="Platforms" unique_id=1296417828 instance=ExtResource("9_pjppf")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.7553203, 4.1577992, -41.021088)
+skeleton = NodePath("../..")
+
+[node name="Table_Big3" parent="Platforms" unique_id=1800217258 instance=ExtResource("9_pjppf")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.960623, 4.1577992, -45.692673)
+skeleton = NodePath("../..")
+
+[node name="Environment" type="Node3D" parent="." unique_id=1981949305]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment" unique_id=673919964]
+environment = SubResource("Environment_imks0")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment" unique_id=1520648602]
+transform = Transform3D(-0.898603, 0.438763, 2.98254e-08, 0.146657, 0.300359, 0.942484, 0.413527, 0.846919, -0.334251, 9.04457, 6.63937, -28.4749)
+shadow_enabled = true
+
+[node name="Extras" type="Node3D" parent="." unique_id=1619719308]
+
+[node name="SpawnPosition" type="Marker3D" parent="Extras" unique_id=1688472081]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+
+[node name="Coins" type="Node3D" parent="." unique_id=1765663966]
+
+[node name="GameManager" type="Node3D" parent="." unique_id=844223940]
+script = ExtResource("3_uy8f0")
+
+[node name="DeadZone" type="Area3D" parent="." unique_id=283295333]
+script = ExtResource("4_6r07y")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DeadZone" unique_id=1783401988]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9, 0)
+shape = SubResource("BoxShape3D_dlmop")
+
+[node name="UserInterface" type="CanvasLayer" parent="." unique_id=556118952]
+
+[node name="GameUI" type="Control" parent="UserInterface" unique_id=1757947927]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_6ioyp")
+metadata/_edit_use_anchors_ = true
+
+[node name="CoinTexture" type="TextureRect" parent="UserInterface/GameUI" unique_id=1424715092]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 31.0
+offset_right = 122.0
+offset_bottom = 121.0
+texture = ExtResource("6_oovug")
+expand_mode = 1
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="CoinsLabel" type="Label" parent="UserInterface/GameUI" unique_id=1254969694]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 50.0
+offset_right = 193.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(0.996094, 0.710938, 0.261719, 1)
+theme_override_colors/font_outline_color = Color(0.644531, 0.410156, 0.1875, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_sda17")
+theme_override_font_sizes/font_size = 48
+text = "X 3"
+label_settings = SubResource("LabelSettings_1fal7")
+metadata/_edit_use_anchors_ = true
+
+[node name="Door" parent="." unique_id=528414719 instance=ExtResource("10_yltlr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17465043, 4.53463, -52.441288)
+next_scene = ExtResource("11_af3po")
+
+[node name="Coin" parent="." unique_id=736107191 instance=ExtResource("12_uy8f0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.76618505, 5.000365, -29.958324)
+
+[node name="Coin2" parent="." unique_id=839121495 instance=ExtResource("12_uy8f0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05627215, 4.689202, -50.252987)
+
+[connection signal="body_entered" from="DeadZone" to="DeadZone" method="_on_body_entered"]
